@@ -3,13 +3,27 @@
 import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router'
+import Foo from './components/Foo'
+import Bar from './components/Bar'
 
 Vue.use(VueRouter)
 
+const routes = [
+	{
+		path: '/',
+		component: Foo
+	},
+	{
+		path: '/bar',
+		component: Bar
+	}
+]
 
-/* eslint-disable no-new */
-new Vue({
-  el: '#app',
-  template: '<App/>',
-  components: { App }
+const router = new VueRouter({
+	routes : routes
 })
+
+
+new Vue({
+	router
+}).$mount('#app')
