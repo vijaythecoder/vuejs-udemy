@@ -2,28 +2,13 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-import VueRouter from 'vue-router'
-import Foo from './components/Foo'
-import Bar from './components/Bar'
+import router from './router'
 
-Vue.use(VueRouter)
-
-const routes = [
-	{
-		path: '/',
-		component: Foo
-	},
-	{
-		path: '/bar',
-		component: Bar
-	}
-]
-
-const router = new VueRouter({
-	routes : routes
-})
-
+window.jQuery = require('jquery')
+require('bootstrap')
 
 new Vue({
 	router
 }).$mount('#app')
+
+
